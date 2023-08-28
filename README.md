@@ -54,8 +54,8 @@ The following features are planned:
 ### Version 1.1: Tree View
 - Curly braces around each level, one indentation per level, different colors for different types and levels of indentation
 - Expandable and collapsible nodes with little triangles
-  - ▽ Expand
-  - ▷ Collapse
+  - ▷ Expand
+  - ▽ Collapse
 - Add a search bar
 - Add settings
   - Show/hide types
@@ -73,7 +73,7 @@ The following features are planned:
 - Add a button to modify simple types ✎
 
 ### Version 2.0: MongoDB Support
-- TODO
+- More to come...
 
 ## Getting Started
 
