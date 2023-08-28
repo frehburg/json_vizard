@@ -1,29 +1,13 @@
-# PythonTemplate
-This repository contains a simple template for Python repositories, including actions and a .gitignore file. The actions include linting using ruff and automatic test execution using pytest on merging to the main branch.
-
-You can also add a badge like this one to your README.md file:
-[![Unit Tests and Code Style](https://github.com/frehburg/PythonTemplate/actions/workflows/python-app.yaml/badge.svg)](https://github.com/frehburg/PythonTemplate/actions/workflows/python-app.yaml)
-
-## Branch Protection
-- Go to Settings -> Branches -> Add Branch protection rule
-- Enter "main" as branch name pattern
-- Check "Require a pull request before merging"
-  - Check "Require approvals" and select at least one reviewer
-- Check "Require status checks to pass before merging"
-- (Optional:) Check "Require signed commits" if you are using SSH to sign your commits
-- Check "Require linear history"
-- Make sure to NOT check "Allow force pushes" and "Allow deletions"
-
-See here a template for your README
-
-# Project Name
+# JSON Vizard
 
 Brief description of your project.
+
+Tests and code style checks: [![Unit Tests and Code Style](https://github.com/frehburg/JSON-Vizard/actions/workflows/python-app.yaml/badge.svg)](https://github.com/frehburg/JSON-Vizard/actions/workflows/python-app.yaml)
 
 ## Table of Contents
 
 - [Project Description](#project-description)
-- [Features](#features)
+- [Planned Features](#planned-features)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -34,11 +18,62 @@ Brief description of your project.
 
 ## Project Description
 
-A brief overview of your project and its purpose.
+This is a simple GUI to inspect, edit and create JSON files.
 
-## Features
+The following versions are planned:
+- `v0.1`: Implement JSON file reading and modification
+- `v1.1`: Add a tree view to the GUI
+- `v1.2`: Add a JSON editor and creator to the GUI
+- `v2.0`: Add MongoDB support
 
-List the key features of your project.
+## Planned Features
+
+### Version 0.1: JSON File Reading and Modification
+The initial version of the project is a simple suit of methods to read and modify JSON files. This is not representable
+of the final product, but a first step towards it. 
+
+The following features are planned:
+- Read JSON files
+  - To a dictionary
+  - To String
+  - From BSON (Binary JSON)
+- Write JSON files
+  - From a dictionary
+  - From String
+  - To BSON (Binary JSON)
+- Remove arguments from JSON files
+- Add arguments to JSON files
+  - Simple types (Strings, Numbers, Booleans)
+  - Lists
+  - Dictionaries (Sublevels)
+- Modify simple types in JSON files
+- Implement search in JSON
+- Add simple CLI
+
+
+### Version 1.1: Tree View
+- Curly braces around each level, one indentation per level, different colors for different types and levels of indentation
+- Expandable and collapsible nodes with little triangles
+  - ▽ Expand
+  - ▷ Collapse
+- Add a search bar
+- Add settings
+  - Show/hide types
+  - Font size
+  - Dark mode (background and text color)
+  - Show/hide line numbers
+  - Custom colors schemes for different types and indentation levels
+
+### Version 1.2: Visual JSON Editor and Creator
+- Add a button to add new nodes at each level +
+  - Simple types (Strings, Numbers, Booleans)
+  - Lists
+  - Dictionaries (Sublevels)
+- Add a button to remove nodes ✖
+- Add a button to modify simple types ✎
+
+### Version 2.0: MongoDB Support
+- TODO
 
 ## Getting Started
 
@@ -56,18 +91,12 @@ Step-by-step instructions on how to install and set up your project.
 
 Provide examples and explanations of how your project can be used. Include code snippets or screenshots if necessary.
 
-## Contributing
-
-Guidelines for contributing to your project. Include information about how others can contribute, submit issues, and create pull requests.
-
 ## License
 
-Specify the license under which your project is distributed.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/frehburg/JSON-Vizard/blob/main/LICENSE.txt) file for details.
 
 ## Acknowledgements
 
-Credit any individuals, resources, or tools that have inspired or helped your project.
+I would like to thank me, myself and I.
 
 ---
-
-**Note:** Customize the sections, content, and formatting to fit your project's needs. Remember to replace placeholders with actual information.
