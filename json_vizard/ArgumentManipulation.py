@@ -79,11 +79,11 @@ def modify_arg(
     }
 
     *Example usage 1 (key)*:
-    modify_simple_arg(dict1, new_val="John Johnson", key="name")
+    modify_simple_arg(dict1, new_val="John Johnson Jr.", key="name")
     >>> True
     print(dict1)
     >>> {
-            "name": "John Johnson",
+            "name": "John Johnson Jr.",
             "age": 99,
             "location": {
                 "home": "Testville",
