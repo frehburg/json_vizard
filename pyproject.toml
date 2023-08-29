@@ -57,7 +57,7 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 dev = ["check-manifest"]
-test = ["pytest"]
+test = ["pytest", "coverage", "sort", "ruff"]
 
 [project.urls]  # Optional
 "GitHub" = "https://github.com/frehburg/"
