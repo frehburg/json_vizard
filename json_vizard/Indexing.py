@@ -1,9 +1,9 @@
-from typing import Union, Dict, List, Tuple
+from typing import Union, Dict, List
 
 
 def get_from(
         dictionary: Dict, *args, **kwargs) \
-        -> Union[int, float, str, bool, Dict, List, Tuple]:
+        -> Union[int, float, str, bool, Dict, List]:
     """ Gets a value from a dictionary using a key or list of keys.
     *Example dictionary*:
     dict1 = {
