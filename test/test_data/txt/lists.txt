@@ -1,0 +1,6 @@
+{
+  "level1a": ["a", "b", "c"],
+  "level1b": ["d", "e", "f"],
+  "level1c": ["g", "h", "i"],
+  "level1d": ["j", "k", "l"]
+}

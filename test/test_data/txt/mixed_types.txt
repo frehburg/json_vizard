@@ -1,0 +1,14 @@
+{
+  "name": "Testface McTestson",
+  "age": 99,
+  "location": "Testville",
+  "hobbies": ["testing1", "testing2", "testing3"],
+  "likes": {
+    "food": {
+        "veggies": ["testing1veg", "testing2veg", "testing3veg"],
+        "meat": ["testing1meat", "testing2meat", "testing3meat"]
+    },
+    "drink": ["testing1bev", "testing2bev", "testing3bev"],
+    "color": "testing"
+  }
+}
