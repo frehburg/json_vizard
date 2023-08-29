@@ -79,3 +79,42 @@ def write(dictionary: Dict, path: Path, file_type=FileType.JSON) -> bool:
     :raises TypeError: If file_type is not a FileType.
     """
     pass
+
+
+def _write_json(dictionary: Dict, path: Path) -> bool:
+    """Writes a dictionary to a JSON file.
+
+    :param dictionary: The dictionary to write to the file.
+    :type dictionary: Dict
+    :param path: The path to the file.
+    :type path: Path
+    :return: True if the file was written successfully, False otherwise.
+    :rtype: bool
+    """
+    pass
+
+
+def _write_bson(dictionary: Dict, path: Path) -> bool:
+    """Writes a dictionary to a BSON file.
+
+    :param dictionary: The dictionary to write to the file.
+    :type dictionary: Dict
+    :param path: The path to the file.
+    :type path: Path
+    :return: True if the file was written successfully, False otherwise.
+    :rtype: bool
+    """
+    pass
+
+
+def _write_txt(dictionary: Dict, path: Path) -> bool:
+    """Writes a dictionary to a TXT file.
+
+    :param dictionary: The dictionary to write to the file.
+    :type dictionary: Dict
+    :param path: The path to the file.
+    :type path: Path
+    :return: True if the file was written successfully, False otherwise.
+    :rtype: bool
+    """
+    pass
