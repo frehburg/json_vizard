@@ -28,8 +28,8 @@ The following versions are planned:
 
 ## Planned Features
 
-## Version 0: Backend and CLI
-### Version 0.1: JSON File Reading and Modification
+### Version 0: Backend and CLI
+#### Version 0.1: JSON File Reading and Modification
 The initial version of the project is a simple suit of methods to read and modify JSON files. This is not representable
 of the final product, but a first step towards it. 
 
@@ -51,8 +51,8 @@ The following features are planned:
 - Implement search in JSON
 - Add simple CLI
 
-## Version 1: GUI
-### Version 1.1: Tree View
+### Version 1: GUI
+#### Version 1.1: Tree View
 - Curly braces around each level, one indentation per level, different colors for different types and levels of indentation
 - Expandable and collapsible nodes with little triangles
   - ▷ Expand
@@ -65,7 +65,7 @@ The following features are planned:
   - Show/hide line numbers
   - Custom colors schemes for different types and indentation levels
 
-### Version 1.2: Visual JSON Editor and Creator
+#### Version 1.2: Visual JSON Editor and Creator
 - Add a button to add new nodes at each level +
   - Simple types (Strings, Numbers, Booleans)
   - Lists
