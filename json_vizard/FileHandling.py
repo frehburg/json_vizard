@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import Union, Dict
-from Enums import ReturnType, FileType
+
+from json_vizard.Enums import ReturnType, FileType
 
 
 def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, str]:
