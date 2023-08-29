@@ -1,8 +1,10 @@
+import os
 from pathlib import Path
 
 import pytest
 
-from json_vizard.FileHandling import read
+from json_vizard import read, write
+from json_vizard.FileHandling import remove
 
 deeply_nested = {
     "level_1": {
@@ -188,3 +190,162 @@ def test_read_bson_numbers():
 def test_read_txt_numbers():
     path = Path.cwd() / 'test_data' / 'txt' / 'numbers.txt'
     assert read(path) == numbers
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_deeply_nested():
+    path = Path.cwd() / 'test_data' / 'temp' / 'deeply_nested.json'
+    write(deeply_nested, path)
+    assert read(path) == deeply_nested
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_deeply_nested():
+    path = Path.cwd() / 'test_data' / 'temp' / 'deeply_nested.bson'
+    write(deeply_nested, path)
+    assert read(path) == deeply_nested
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_deeply_nested():
+    path = Path.cwd() / 'test_data' / 'temp' / 'deeply_nested.txt'
+    write(deeply_nested, path)
+    assert read(path) == deeply_nested
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_empty_line_end_of_file():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_end_of_file.json'
+    write(empty_line_end_of_file, path)
+    assert read(path) == empty_line_end_of_file
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_empty_line_end_of_file():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_end_of_file.bson'
+    write(empty_line_end_of_file, path)
+    assert read(path) == empty_line_end_of_file
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_empty_line_end_of_file():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_end_of_file.txt'
+    write(empty_line_end_of_file, path)
+    assert read(path) == empty_line_end_of_file
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_empty_line_in_between():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_in_between.json'
+    write(empty_line_in_between, path)
+    assert read(path) == empty_line_in_between
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_empty_line_in_between():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_in_between.bson'
+    write(empty_line_in_between, path)
+    assert read(path) == empty_line_in_between
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_empty_line_in_between():
+    path = Path.cwd() / 'test_data' / 'temp' / 'empty_line_in_between.txt'
+    write(empty_line_in_between, path)
+    assert read(path) == empty_line_in_between
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_lists():
+    path = Path.cwd() / 'test_data' / 'temp' / 'lists.json'
+    write(lists, path)
+    assert read(path) == lists
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_lists():
+    path = Path.cwd() / 'test_data' / 'temp' / 'lists.bson'
+    write(lists, path)
+    assert read(path) == lists
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_lists():
+    path = Path.cwd() / 'test_data' / 'temp' / 'lists.txt'
+    write(lists, path)
+    assert read(path) == lists
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_mixed_types():
+    path = Path.cwd() / 'test_data' / 'temp' / 'mixed_types.json'
+    write(mixed_types, path)
+    assert read(path) == mixed_types
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_mixed_types():
+    path = Path.cwd() / 'test_data' / 'temp' / 'mixed_types.bson'
+    write(mixed_types, path)
+    assert read(path) == mixed_types
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_mixed_types():
+    path = Path.cwd() / 'test_data' / 'temp' / 'mixed_types.txt'
+    write(mixed_types, path)
+    assert read(path) == mixed_types
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_json_numbers():
+    path = Path.cwd() / 'test_data' / 'temp' / 'numbers.json'
+    write(numbers, path)
+    assert read(path) == numbers
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_bson_numbers():
+    path = Path.cwd() / 'test_data' / 'temp' / 'numbers.bson'
+    write(numbers, path)
+    assert read(path) == numbers
+    remove(path)
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_write_txt_numbers():
+    path = Path.cwd() / 'test_data' / 'temp' / 'numbers.txt'
+    write(numbers, path)
+    assert read(path) == numbers
+    remove(path)
+
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_remove():
+    path = Path.cwd() / 'test_data' / 'temp' / 'remove.json'
+    data_dict = {'test': 'test'}
+
+    write(data_dict, path)
+
+    # assert os.path.exists(path)
+
+    remove(path)
+
+    assert not os.path.exists(path)

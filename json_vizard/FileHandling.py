@@ -118,3 +118,14 @@ def _write_txt(dictionary: Dict, path: Path) -> bool:
     :rtype: bool
     """
     pass
+
+
+def remove(path: Path) -> bool:
+    """Removes a file.
+
+    :param path: Path to the file.
+    :type path: Path
+    :return: True if the file was removed successfully, False otherwise.
+    :rtype: bool
+    """
+    pass
