@@ -2,7 +2,8 @@ from typing import Union, Dict, List, Tuple
 
 
 def get_from(
-        dictionary: Dict, *args, **kwargs) -> Union[int, float, str, Dict, List, Tuple]:
+        dictionary: Dict, *args, **kwargs) \
+        -> Union[int, float, str, bool, Dict, List, Tuple]:
     """ Gets a value from a dictionary using a key or list of keys.
     *Example dictionary*:
     dict1 = {
@@ -37,5 +38,6 @@ def get_from(
     :type args: Union[str, int]
     :param kwargs: Can be key or keys. Key is an index, keys is a list of indices.
     :return: The value from the dictionary.
-    :rtype: Union[int, float, str, Dict, List, Tuple]
+    :rtype: Union[int, float, str, bool, Dict, List, Tuple]
+    :raises KeyError: If the key or keys do not exist in the dictionary.
     """
