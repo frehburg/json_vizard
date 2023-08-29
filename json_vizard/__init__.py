@@ -1,7 +1,7 @@
 from .FileHandling import read, write, remove
 from .Enums import ReturnType, FileType
 from .Hashing import unique_hash, compare_hashes
-from .Indexing import get_from
+from .InformationRetrieval import get_from
 from .ArgumentManipulation import remove_arg, modify_arg
 
 __all__ = [
