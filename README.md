@@ -28,6 +28,7 @@ The following versions are planned:
 
 ## Planned Features
 
+## Version 0: Backend and CLI
 ### Version 0.1: JSON File Reading and Modification
 The initial version of the project is a simple suit of methods to read and modify JSON files. This is not representable
 of the final product, but a first step towards it. 
@@ -50,7 +51,7 @@ The following features are planned:
 - Implement search in JSON
 - Add simple CLI
 
-
+## Version 1: GUI
 ### Version 1.1: Tree View
 - Curly braces around each level, one indentation per level, different colors for different types and levels of indentation
 - Expandable and collapsible nodes with little triangles
