@@ -89,7 +89,15 @@ def _read_txt(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
     """
-    pass
+    with open(path, "r") as file:
+        json_data = file.read()
+
+    dictionary = json.loads(json_data)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
 def write(dictionary: Dict, path: Path, file_type=FileType.JSON) -> bool:
