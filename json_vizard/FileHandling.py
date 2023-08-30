@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import Union, Dict
+import json
 
 from json_vizard.Enums import ReturnType, FileType
 
@@ -18,11 +19,11 @@ def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, s
     :rtype: Union[dict, str]
     :raises TypeError: If to_datatype is not a ReturnType.
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid JSON, BSON or TXT file.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
     """
     if not isinstance(return_type, ReturnType):
         raise TypeError(f'return_type must be a ReturnType, not {type(return_type)}.')
-    
+
     file_extension = path.suffix
     if file_extension == '.json':
         return _read_json(path, return_type)
@@ -43,9 +44,15 @@ def _read_json(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :return: The JSON file as a dictionary.
     :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid JSON file.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
     """
-    pass
+    with open('data.json', 'r') as json_file:
+        dictionary = json.load(json_file)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
 def _read_bson(path: Path, return_type: ReturnType = ReturnType.DICT)\
