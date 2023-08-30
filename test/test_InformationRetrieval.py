@@ -1,6 +1,6 @@
 import pytest
 
-from json_vizard import get_from, search
+from json_vizard import get_from, search, traverse
 
 
 @pytest.mark.skip(reason='Not implemented yet')
@@ -125,7 +125,7 @@ def test_search_not_exact_str():
     assert search(dict1, "John Johnson", exact_match=False) \
            == {
                'name': 'John Johnson',
-                'son': 'John Johnson Jr.'
+               'son': 'John Johnson Jr.'
            }
 
 
@@ -155,6 +155,7 @@ def test_search_delta_without_exact_match_false():
                'pi': 3.14159265359,
                'pi_approx': 3.142
            }
+
 
 @pytest.mark.skip(reason='Not implemented yet')
 def test_search_not_exact_bool():
@@ -216,4 +217,111 @@ def test_search_key_not_exact():
         "son": "John Johnson Jr.",
     }
     assert search(dict1, "nam", search_for_keys=True, exact_match=False) \
-              == {'name': 'John Johnson'}
+           == {'name': 'John Johnson'}
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_dfs_traverse_no_keys():
+    dict1 = {
+        "A": 1,
+        "B_sub": {
+            "B": 2,
+            "D_sub": {
+                "D": 4,
+            },
+        },
+        "C_sub": {
+            "C": 3,
+            "EF_sub": {
+                "E": 5,
+                "F": 6,
+            },
+        },
+    }
+
+    expected_dfs_result = [1, 2, 4, 3, 5, 6]
+
+    assert traverse(dict1, traversal_type='dfs') == expected_dfs_result
+    assert traverse(dict1, traversal_type='dfs', include_keys=False) \
+           == expected_dfs_result
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_dfs_traverse_keys():
+    dict1 = {
+        "A": 1,
+        "B_sub": {
+            "B": 2,
+            "D_sub": {
+                "D": 4,
+            },
+        },
+        "C_sub": {
+            "C": 3,
+            "EF_sub": {
+                "E": 5,
+                "F": 6,
+            },
+        },
+    }
+
+    assert traverse(dict1, traversal_type='dfs', include_keys=True) \
+           == [("A", 1), (["B_sub", "B"], 2), (["B_sub", "D_sub", "D"], 4),
+               (["C_sub", "C"], 3), (["C_sub", "EF_sub", "E"], 5),
+               (["C_sub", "EF_sub", "F"], 6)]
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_bfs_traverse_no_keys():
+    dict1 = {
+        "A": 1,
+        "B_sub": {
+            "B": 2,
+            "D_sub": {
+                "D": 4,
+            },
+        },
+        "C_sub": {
+            "C": 3,
+            "EF_sub": {
+                "E": 5,
+                "F": 6,
+            },
+        },
+    }
+
+    expected_bfs_result = [1, 2, 3, 4, 5, 6]
+
+    assert traverse(dict1) == expected_bfs_result
+    assert traverse(dict1, traversal_type='bfs') == expected_bfs_result
+    assert traverse(dict1, traversal_type='bfs', include_keys=False) \
+           == expected_bfs_result
+
+
+@pytest.mark.skip(reason='Not implemented yet')
+def test_bfs_traverse_keys():
+    dict1 = {
+        "A": 1,
+        "B_sub": {
+            "B": 2,
+            "D_sub": {
+                "D": 4,
+            },
+        },
+        "C_sub": {
+            "C": 3,
+            "EF_sub": {
+                "E": 5,
+                "F": 6,
+            },
+        },
+    }
+
+    expected_bfs_result = [("A", 1), (["B_sub", "B"], 2), (["C_sub", "C"], 3),
+                           (["B_sub", "D_sub", "D"], 4), (["C_sub", "EF_sub", "E"], 5),
+                           (["C_sub", "EF_sub", "F"], 6)]
+
+    assert traverse(dict1, include_keys=True) \
+           == expected_bfs_result
+    assert traverse(dict1, traversal_type='bfs', include_keys=True) \
+           == expected_bfs_result
