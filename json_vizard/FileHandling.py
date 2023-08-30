@@ -22,6 +22,7 @@ def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, s
     :raises TypeError: If to_datatype is not a ReturnType.
     :raises FileNotFoundError: If the file does not exist.
     :raises JSONDecodeError: If the file is not a valid JSON file.
+    :raises bson.errors.BSONDecodeError: If the file is not a valid BSON file.
     """
     if not isinstance(return_type, ReturnType):
         raise TypeError(f'return_type must be a ReturnType, not {type(return_type)}.')
@@ -66,7 +67,7 @@ def _read_bson(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :return: The BSON file as a dictionary.
     :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid BSON file.
+    :raises bson.errors.BSONDecodeError: If the file is not a valid BSON file.
     """
     with open(path, 'rb') as bson_file:
         bson_data = bson_file.read()
@@ -88,6 +89,7 @@ def _read_txt(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :return: The TXT file as a dictionary.
     :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
     """
     with open(path, "r") as file:
         json_data = file.read()
