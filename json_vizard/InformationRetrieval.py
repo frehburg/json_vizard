@@ -148,3 +148,143 @@ def search(dictionary: Dict,
            ]
     """
     pass
+
+
+def _search_int(dictionary: Dict, prompt: int):
+    """Searches a dictionary for an int value.
+
+    ints cannot be searched as keys, therefore this method only searches for values.
+    ints can only be searched exactly.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: int
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_str_exact(dictionary: Dict, prompt: str):
+    """Searches a dictionary for an exactly matching str value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: str
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_str_fuzzy(dictionary: Dict, prompt: str):
+    """Searches a dictionary for a fuzzy matching str value.
+
+    TODO: explain exact functionality
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: str
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_float_exact(dictionary: Dict, prompt: float):
+    """Searches a dictionary for an exactly matching float value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: float
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_float_with_delta(dictionary: Dict, prompt: float, delta: float):
+    """Searches a dictionary for a float value with a delta.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: float
+    :param delta: The delta for the float value.
+    :type delta: float
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_bool(dictionary: Dict, prompt: bool):
+    """Searches a dictionary for a bool value.
+
+    bools cannot be searched as keys, therefore this method only searches for values.
+    bools can only be searched exactly.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: bool
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_dict_exact(dictionary: Dict, prompt: Dict):
+    """Searches a dictionary for an exactly matching dict value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: Dict
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_dict_fuzzy(dictionary: Dict, prompt: Dict):
+    """Searches a dictionary for a fuzzy matching dict value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: Dict
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_list_exact(dictionary: Dict, prompt: List):
+    """Searches a dictionary for an exactly matching list value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: List
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def _search_list_fuzzy(dictionary: Dict, prompt: List):
+    """Searches a dictionary for a fuzzy matching list value.
+
+    :param dictionary: The dictionary to search.
+    :type dictionary: Dict
+    :param prompt: The value to search for.
+    :type prompt: List
+    :return: A dictionary where the key is a tuple of keys to get the value from the
+    dictionary and the value is the value from the dictionary.
+    """
+    pass
