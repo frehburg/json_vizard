@@ -50,7 +50,7 @@ def search(dictionary: Dict,
            delta: float = 0
            ) -> Union[
                     Dict[
-                        Tuple[Union[str, int]],
+                        Union[Tuple[Union[str, int]], str],
                         Union[int, float, str, bool, Dict, List]
                     ],
                     bool
@@ -59,7 +59,7 @@ def search(dictionary: Dict,
 
     Searches a dictionary for a value. Returns a dictionary where the key is a tuple of
     keys to get the value from the dictionary and the value is the value from the
-    dictionary.
+    dictionary. If the tuple of keys has a length of 1, the key will be a string.
 
     Return false if no matches are found.
 
@@ -72,7 +72,9 @@ def search(dictionary: Dict,
     * `str`: Strings that contain the search value will be considered equal.
     * `bool`: Will only return values that are equal to the search value.
     * `dict`: Dictionaries that contain the search value will be considered equal.
-    * `list`: Lists that contain the search value will be considered equal.
+    Meaning that the search value must be a subset of the dictionary.
+    * `list`: Lists that contain the search value will be considered equal. Meaning
+    that the search value must be a sublist of the list.
 
     If a float search is performed with a delta > 0, setting exact_match to False is
     not necessary.
@@ -137,7 +139,12 @@ def search(dictionary: Dict,
     :type delta: float
     :return: A dictionary where the key is a tuple of keys to get the value from the
     dictionary and the value is the value from the dictionary.
-    :rtype: Union[Dict[Tuple[Union[str, int]],
-    Union[int, float, str, bool, Dict, List]], bool]
+    :rtype: Union[
+                    Dict[
+                        Union[Tuple[Union[str, int]], str],
+                        Union[int, float, str, bool, Dict, List]
+                    ],
+                    bool
+           ]
     """
     pass
