@@ -50,5 +50,7 @@ def compare_hashes(hash1: str, hash2: str) -> bool:
     :type hash1: str
     :param hash2: The second hash.
     :type hash2: str
+    :return: True if the hashes are equal, false otherwise.
+    :rtype: bool
     """
-    pass
+    return hash1 == hash2
