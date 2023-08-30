@@ -63,7 +63,8 @@ def search(dictionary: Dict,
 
     Return false if no matches are found.
 
-    If search_for_key is True, the function will search for the key instead of the value.
+    If search_for_key is True, the function will search for the key instead of the
+    value.
 
     Turning exact match on will affect search values in the following way:
     * `int`: Will only return values that are equal to the search value.
@@ -109,7 +110,8 @@ def search(dictionary: Dict,
         Example usage 3 (search_for_key=True, exact_match=True):
         search(dict1, "vegetarian", search_for_key=True)
         >>> {
-            ("likes", "food", "vegetarian"): ["testing1veg", "testing2veg", "testing3veg"]
+            ("likes", "food", "vegetarian"): ["testing1veg", "testing2veg",
+            "testing3veg"]
         }
 
         Example usage 4 (search_for_key=True, exact_match=False):
