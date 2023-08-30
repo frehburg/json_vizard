@@ -60,11 +60,11 @@ def add_arg(dictionary: Dict,
             }
 
     :param dictionary: The dictionary to add the value to.
-    :traversal_type dictionary: Dict
+    :type dictionary: Dict
     :param new_val: The new value.
-    :traversal_type new_val: Union[int, float, str, bool]
+    :type new_val: Union[int, float, str, bool]
     :param args: The keys to add the value to.
-    :traversal_type args: Union[str, int]
+    :type args: Union[str, int]
     :param kwargs: Can be key or keys. Key is an index, keys is a list of indices.
     :return: True if the value was added successfully, False otherwise.
     :rtype: bool
@@ -123,9 +123,9 @@ def remove_arg(dictionary: Dict, *args, **kwargs) -> bool:
     }
 
     :param dictionary: The dictionary to remove the value from.
-    :traversal_type dictionary: Dict
+    :type dictionary: Dict
     :param args: The keys to remove the value from.
-    :traversal_type args: Union[str, int]
+    :type args: Union[str, int]
     :param kwargs: Can be key or keys. Key is an index, keys is a list of indices.
     :return: True if the value was removed successfully, False otherwise.
     :rtype: bool
@@ -190,11 +190,11 @@ def modify_arg(
         }
 
     :param dictionary: The dictionary to modify the value in.
-    :traversal_type dictionary: Dict
+    :type dictionary: Dict
     :param new_val: The new value.
-    :traversal_type new_val: Union[int, float, str, bool]
+    :type new_val: Union[int, float, str, bool]
     :param args: The keys to modify the value in.
-    :traversal_type args: Union[str, int]
+    :type args: Union[str, int]
     :param kwargs: Can be key or keys. Key is an index, keys is a list of indices.
     :return: True if the value was modified successfully, False otherwise.
     :rtype: bool
