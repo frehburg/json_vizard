@@ -1,4 +1,5 @@
 from typing import Union, Dict
+import hashlib
 
 
 def unique_hash(obj: Union[Dict, str]) -> str:
@@ -28,7 +29,7 @@ def _hash_string(string: str) -> str:
     :return: The hash as a string.
     :rtype: str
     """
-    pass
+    return hashlib.sha256(string.encode('utf-8')).hexdigest()
 
 
 def _hash_dict(dictionary: Dict) -> str:
@@ -37,6 +38,8 @@ def _hash_dict(dictionary: Dict) -> str:
     :param dictionary:
     :return:
     """
+    dictionary_string = str(dictionary)
+    return _hash_string(dictionary_string)
 
 
 def compare_hashes(hash1: str, hash2: str) -> bool:
@@ -48,3 +51,4 @@ def compare_hashes(hash1: str, hash2: str) -> bool:
     :param hash2: The second hash.
     :type hash2: str
     """
+    pass
