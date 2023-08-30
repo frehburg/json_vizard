@@ -291,7 +291,10 @@ def _search_list_fuzzy(dictionary: Dict, prompt: List):
     pass
 
 
-def traverse(dictionary: Dict, type: str = 'bfs', include_keys: bool = False) -> List:
+def traverse(
+        dictionary: Dict,
+        traversal_type: str = 'bfs',
+        include_keys: bool = False) -> List:
     """Traverses a dictionary.
 
     Traverses a dictionary using either breadth-first search or depth-first search.
@@ -339,8 +342,8 @@ def traverse(dictionary: Dict, type: str = 'bfs', include_keys: bool = False) ->
 
     :param dictionary: The dictionary to traverse.
     :type dictionary: Dict
-    :param type: The type of traversal. Can be either 'bfs' or 'dfs'.
-    :type type: str
+    :param traversal_type: The type of traversal. Can be either 'bfs' or 'dfs'.
+    :type traversal_type: str
     :return: A list containing the contents of the dictionary.
     :rtype: List
     """
