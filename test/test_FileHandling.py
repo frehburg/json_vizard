@@ -7,7 +7,8 @@ from json_vizard import read, write
 from json_vizard.FileHandling import remove
 
 test_data_path = \
-    Path('https://github.com/frehburg/json_vizard/tree/main/test/test_data')
+    Path('https://github.com/frehburg/JSON-Vizard/blob/2b77479707c4085ee17c71fc78d76678'
+         '876f68ee/test/test_data/')
 
 deeply_nested = {
     "level_1": {
