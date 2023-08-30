@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install .[test]
           pip install .
+          pip install .[test]
       - name: Organize imports with isort
         run: |
           isort .
