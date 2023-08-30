@@ -23,39 +23,42 @@ def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, s
     pass
 
 
-def _read_json(path: Path) -> dict:
+def _read_json(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a JSON file.
 
     :param path: Path to the JSON file.
     :type path: Path
     :return: The JSON file as a dictionary.
-    :rtype: dict
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
     :raises ValueError: If the file is not a valid JSON file.
     """
     pass
 
 
-def _read_bson(path: Path) -> dict:
+def _read_bson(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a BSON file.
 
     :param path: Path to the BSON file.
     :type path: Path
     :return: The BSON file as a dictionary.
-    :rtype: dict
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
     :raises ValueError: If the file is not a valid BSON file.
     """
     pass
 
 
-def _read_txt(path: Path) -> str:
+def _read_txt(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a TXT file.
 
     :param path: Path to the TXT file.
     :type path: Path
     :return: The TXT file as a dictionary.
-    :rtype: str
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
     """
     pass
