@@ -41,6 +41,7 @@ def get_from(
     :rtype: Union[int, float, str, bool, Dict, List, Tuple]
     :raises KeyError: If the key or keys do not exist in the dictionary.
     """
+    pass
 
 
 def search(dictionary: Dict,
@@ -286,5 +287,83 @@ def _search_list_fuzzy(dictionary: Dict, prompt: List):
     :type prompt: List
     :return: A dictionary where the key is a tuple of keys to get the value from the
     dictionary and the value is the value from the dictionary.
+    """
+    pass
+
+
+def traverse(dictionary: Dict, type: str = 'bfs', include_keys: bool = False) -> List:
+    """Traverses a dictionary.
+
+    Traverses a dictionary using either breadth-first search or depth-first search.
+    Returns a list containing the contents of the dictionary.
+
+    Examples:
+        Example dictionary:
+        dict1 = {
+            "A": 1,
+            "B_sub": {
+                "B": 2,
+                "D_sub": {
+                    "D": 4,
+                },
+            },
+            "C_sub": {
+                "C": 3,
+                "EF_sub": {
+                    "E": 5,
+                    "F": 6,
+                },
+            },
+        }
+
+        In Graph form:
+                A
+               / \
+              B   C
+             /   / \
+            D   E   F
+
+        Example usage 1 (bfs):
+        traverse(dict1, type="bfs", include_keys=False)
+        >>> [1, 2, 3, 4, 5, 6]
+
+        Example usage 2 (dfs):
+        traverse(dict1, type="dfs", include_keys=False)
+        >>> [1, 2, 4, 3, 5, 6]
+
+        Example usage 3 (bfs, include_keys=True):
+        traverse(dict1, type="bfs", include_keys=True)
+        >>> [("A",1), (["B_sub","B"],2), (["C_sub", "C"],3), \
+            (["B_sub","D_sub","D"],4), (["C_sub","EF_sub","E"],5), \
+            (["C_sub","EF_sub","F"],6)]
+
+    :param dictionary: The dictionary to traverse.
+    :type dictionary: Dict
+    :param type: The type of traversal. Can be either 'bfs' or 'dfs'.
+    :type type: str
+    :return: A list containing the contents of the dictionary.
+    :rtype: List
+    """
+    pass
+
+
+def _bfs_traversal(dictionary: Dict) -> List:
+    """Traverses a dictionary using breadth-first search.
+
+    :param dictionary: The dictionary to traverse.
+    :type dictionary: Dict
+    :return: A list containing the contents of the dictionary.
+    :rtype: List
+    """
+    pass
+
+
+def _dfs_traversal(dictionary: Dict) -> List:
+    """Traverses a dictionary using depth-first search.
+
+    :param dictionary: The dictionary to traverse.
+    :type dictionary: Dict
+    :return: A list containing the contents of the dictionary.
+    :rtype: List
     """
     pass
