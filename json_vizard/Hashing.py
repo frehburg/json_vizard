@@ -10,8 +10,14 @@ def unique_hash(obj: Union[Dict, str]) -> str:
     :type obj: Union[Dict, str]
     :return: The hash as a string.
     :rtype: str
+    :raises TypeError: If obj is not a dictionary or string.
     """
-    pass
+    if isinstance(obj, str):
+        return _hash_string(obj)
+    elif isinstance(obj, dict):
+        return _hash_dict(obj)
+    else:
+        raise TypeError('obj must be a dictionary or string.')
 
 
 def _hash_string(string: str) -> str:
