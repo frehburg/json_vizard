@@ -7,6 +7,7 @@ def unique_hash(obj: Union[Dict, str]) -> str:
     """Hashes a dictionary or string using SHA256.
 
     Hashes a dictionary or string using SHA256. Returns the hash as a string.
+    If the input is a dictionary, it is converted to a string using json.dumps().
 
     :param obj: The dictionary or string to hash.
     :type obj: Union[Dict, str]
