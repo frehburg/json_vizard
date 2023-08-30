@@ -1,3 +1,4 @@
+import json
 from typing import Union, Dict
 import hashlib
 
@@ -38,7 +39,7 @@ def _hash_dict(dictionary: Dict) -> str:
     :param dictionary:
     :return:
     """
-    dictionary_string = str(dictionary)
+    dictionary_string = json.dumps(dictionary)
     return _hash_string(dictionary_string)
 
 
