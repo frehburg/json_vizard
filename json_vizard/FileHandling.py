@@ -18,9 +18,20 @@ def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, s
     :rtype: Union[dict, str]
     :raises TypeError: If to_datatype is not a ReturnType.
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid JSON or BSON file.
+    :raises ValueError: If the file is not a valid JSON, BSON or TXT file.
     """
-    pass
+    if not isinstance(return_type, ReturnType):
+        raise TypeError(f'return_type must be a ReturnType, not {type(return_type)}.')
+    
+    file_extension = path.suffix
+    if file_extension == '.json':
+        return _read_json(path, return_type)
+    elif file_extension == '.bson':
+        return _read_bson(path, return_type)
+    elif file_extension == '.txt':
+        return _read_txt(path, return_type)
+    else:
+        raise ValueError(f'File extension {file_extension} is not supported.')
 
 
 def _read_json(path: Path, return_type: ReturnType = ReturnType.DICT)\
