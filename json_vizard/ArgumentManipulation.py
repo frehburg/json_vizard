@@ -1,6 +1,78 @@
 from typing import Dict, Union, List
 
 
+def add_arg(dictionary: Dict,
+            new_val: Union[int, float, str, bool, Dict, List],
+            *args, **kwargs) -> bool:
+    """Adds a value to a dictionary using a key or list of keys.
+
+    Examples:
+        Example dictionary:
+            dict1 = {
+                "name": "John Johnson",\n
+                "age": 99,\n
+                "location": {
+                    "home": "Testville",\n
+                    "work": "Testington"
+                }\n
+            }
+
+        Example usage 1 (key):
+            add_arg(dict1, new_val="Meridith Johnson", key="spouse")\n
+            >>> True\n
+            print(dict1)\n
+            >>> {
+                    "name": "John Johnson",\n
+                    "age": 99,\n
+                    "location": {
+                        "home": "Testville",\n
+                        "work": "Testington"
+                    },\n
+                    "spouse": "Meridith Johnson"
+            }
+
+        Example usage 2 (list of keys):
+            add_arg(dict1, new_val="Test City", keys=["location", "second work"])\n
+            >>> True\n
+            print(dict1)\n
+            >>> {
+                    "name": "John Johnson",\n
+                    "age": 99,\n
+                    "location": {\n
+                        "home": "Testville",\n
+                        "work": "Testington",\n
+                        "second work": "Test City"
+                    },
+            }
+
+        Example usage 3 (keys):
+            add_arg(dict1, new_val="Test City", "location", "second work")\n
+            >>> True\n
+            print(dict1)\n
+            >>> {
+                    "name": "John Johnson",\n
+                    "age": 99,\n
+                    "location": {
+                        "home": "Testville",\n
+                        "work": "Testington",\n
+                        "second work": "Test City"\n
+                    },
+            }
+
+    :param dictionary: The dictionary to add the value to.
+    :type dictionary: Dict
+    :param new_val: The new value.
+    :type new_val: Union[int, float, str, bool]
+    :param args: The keys to add the value to.
+    :type args: Union[str, int]
+    :param kwargs: Can be key or keys. Key is an index, keys is a list of indices.
+    :return: True if the value was added successfully, False otherwise.
+    :rtype: bool
+    :raises KeyError: If the key or keys do not exist in the dictionary.
+    """
+    pass
+
+
 def remove_arg(dictionary: Dict, *args, **kwargs) -> bool:
     """Removes a value from a dictionary using a key or list of keys.
 
