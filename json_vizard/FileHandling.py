@@ -4,6 +4,8 @@ import json
 
 from json_vizard.Enums import ReturnType, FileType
 
+import bson
+
 
 def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, str]:
     """Reads a dictionary from a JSON, BSON or TXT file.
@@ -46,7 +48,7 @@ def _read_json(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :raises FileNotFoundError: If the file does not exist.
     :raises JSONDecodeError: If the file is not a valid JSON file.
     """
-    with open('data.json', 'r') as json_file:
+    with open(path, 'r') as json_file:
         dictionary = json.load(json_file)
 
     if return_type == ReturnType.DICT:
@@ -66,7 +68,15 @@ def _read_bson(path: Path, return_type: ReturnType = ReturnType.DICT)\
     :raises FileNotFoundError: If the file does not exist.
     :raises ValueError: If the file is not a valid BSON file.
     """
-    pass
+    with open(path, 'rb') as bson_file:
+        bson_data = bson_file.read()
+
+    dictionary = bson.loads(bson_data)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
 def _read_txt(path: Path, return_type: ReturnType = ReturnType.DICT)\
