@@ -18,46 +18,46 @@ def add_arg(dictionary: Dict,
             }
 
         Example usage 1 (key):
-            add_arg(dict1, new_val="Meridith Johnson", key="spouse")
-            >>> True
-            print(dict1)
+            add_arg(dict1, new_val="Meridith Johnson", key="spouse")\n
+            >>> True\n
+            print(dict1)\n
             >>> {
-                    "name": "John Johnson",
-                    "age": 99,
+                    "name": "John Johnson",\n
+                    "age": 99,\n
                     "location": {
-                        "home": "Testville",
+                        "home": "Testville",\n
                         "work": "Testington"
-                    },
+                    },\n
                     "spouse": "Meridith Johnson"
-                }
+            }
 
-    *Example usage 2 (list of keys)*:
-    add_arg(dict1, new_val="Test City", keys=["location", "second work"])
-    >>> True
-    print(dict1)
-    >>> {
-            "name": "John Johnson",
-            "age": 99,
-            "location": {
-                "home": "Testville",
-                "work": "Testington",
-                "second work": "Test City"
-            },
-    }
+        Example usage 2 (list of keys):
+            add_arg(dict1, new_val="Test City", keys=["location", "second work"])\n
+            >>> True\n
+            print(dict1)\n
+            >>> {
+                    "name": "John Johnson",\n
+                    "age": 99,\n
+                    "location": {\n
+                        "home": "Testville",\n
+                        "work": "Testington",\n
+                        "second work": "Test City"
+                    },
+            }
 
-    *Example usage 3 (keys)*:
-    add_arg(dict1, new_val="Test City", "location", "second work")
-    >>> True
-    print(dict1)
-    >>> {
-            "name": "John Johnson",
-            "age": 99,
-            "location": {
-                "home": "Testville",
-                "work": "Testington",
-                "second work": "Test City"
-            },
-    }
+        Example usage 3 (keys):
+            add_arg(dict1, new_val="Test City", "location", "second work")\n
+            >>> True\n
+            print(dict1)\n
+            >>> {
+                    "name": "John Johnson",\n
+                    "age": 99,\n
+                    "location": {
+                        "home": "Testville",\n
+                        "work": "Testington",\n
+                        "second work": "Test City"\n
+                    },
+            }
 
     :param dictionary: The dictionary to add the value to.
     :type dictionary: Dict
