@@ -6,7 +6,7 @@ import pytest
 from json_vizard import read, write
 from json_vizard.FileHandling import remove
 
-test_data_path = Path.cwd().parent / 'test' / 'test_data'
+test_data_path = Path("home/runner/work/json_vizard/json_vizard") / 'test' / 'test_data'
 
 deeply_nested = {
     "level_1": {
