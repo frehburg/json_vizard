@@ -1,5 +1,3 @@
-import pytest as pytest
-
 from json_vizard import Hashing
 
 
