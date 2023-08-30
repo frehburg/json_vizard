@@ -3,7 +3,6 @@ import pytest as pytest
 from json_vizard import Hashing
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_hash_string_reproducible():
     string1 = 'Hello, World!'
     string2 = 'Hello, World!'
@@ -13,7 +12,6 @@ def test_hash_string_reproducible():
     assert hash1 == hash2
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_hash_string_different():
     string1 = 'Hello, World!'
     string2 = 'Hello, World'
@@ -23,7 +21,6 @@ def test_hash_string_different():
     assert hash1 != hash2
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_hash_dict_reproducible():
     dict1 = {'Hello': 'World', 'Foo': 'Bar', 'Baz': {'Qux': 'Quux'}}
     dict2 = {'Hello': 'World', 'Foo': 'Bar', 'Baz': {'Qux': 'Quux'}}
@@ -33,7 +30,6 @@ def test_hash_dict_reproducible():
     assert hash1 == hash2
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_hash_dict_different():
     dict1 = {'Hello': 'World', 'Foo': 'Bar', 'Baz': {'Qux': 'Quux'}}
     dict2 = {'Hello': 'World', 'Foo': 'Bar', 'Baz': {'Qux': 'Quuux'}}
@@ -43,7 +39,6 @@ def test_hash_dict_different():
     assert hash1 != hash2
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_compare_hashes_equal():
     hash1 = Hashing.unique_hash('Hello, World!')
     hash2 = Hashing.unique_hash('Hello, World!')
@@ -51,7 +46,6 @@ def test_compare_hashes_equal():
     assert Hashing.compare_hashes(hash1, hash2)
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_compare_not_hashes_equal():
     hash1 = Hashing.unique_hash('Hello, World!')
     hash2 = Hashing.unique_hash('Hello, World')
