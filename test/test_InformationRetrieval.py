@@ -3,7 +3,6 @@ import pytest
 from json_vizard import get_from, search, traverse
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_deep_indexing_args():
     dict1 = {
         "level_1": {
@@ -21,7 +20,6 @@ def test_deep_indexing_args():
     assert get_from(dict1, "level_1", "key_2", "key_2_2", "key_2_2_2") == "value_2_2_2"
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_deep_indexing_kwargs_keys():
     dict1 = {
         "level_1": {
@@ -40,7 +38,6 @@ def test_deep_indexing_kwargs_keys():
     assert get_from(dict1, keys=keys) == "value_2_2_2"
 
 
-@pytest.mark.skip(reason='Not implemented yet')
 def test_indexing_kwargs_key():
     dict1 = {'a': 1, 'b': 2, 'c': 3}
     assert get_from(dict1, key='a') == 1

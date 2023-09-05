@@ -41,7 +41,38 @@ def get_from(
     :rtype: Union[int, float, str, bool, Dict, List, Tuple]
     :raises KeyError: If the key or keys do not exist in the dictionary.
     """
-    pass
+    if args:
+        keys = args
+        return _get_from_keys(dictionary, keys)
+    elif kwargs:
+        if "key" in kwargs:
+            key = kwargs["key"]
+            return _get_from_key(dictionary, key)
+        elif "keys" in kwargs:
+            keys = kwargs["keys"]
+            return _get_from_keys(dictionary, keys)
+
+
+def _get_from_keys(dictionary: Dict, key_args: Tuple[Union[str, int]]):
+    """
+    Gets a value from a dictionary using a list of keys.
+
+    Recursive implementation
+
+    :param dictionary: Dictionary to get the value from.
+    :type dictionary: Dict
+    :param key_args: list of keys.
+    :type key_args: List[Union[str, int]]
+    :return:
+    """
+    if len(key_args) == 1:  # base case
+        return _get_from_key(dictionary, key_args[0])
+    else:  # recursive case
+        return _get_from_keys(dictionary[key_args[0]], key_args[1:])
+
+
+def _get_from_key(dictionary, key):
+    return dictionary[key]
 
 
 def search(dictionary: Dict,
@@ -50,12 +81,12 @@ def search(dictionary: Dict,
            exact_match: bool = True,
            delta: float = 0
            ) -> Union[
-                    Dict[
-                        Union[Tuple[Union[str, int]], str],
-                        Union[int, float, str, bool, Dict, List]
-                    ],
-                    bool
-           ]:
+    Dict[
+        Union[Tuple[Union[str, int]], str],
+        Union[int, float, str, bool, Dict, List]
+    ],
+    bool
+]:
     """Searches a dictionary for a value.
 
     Searches a dictionary for a value. Returns a dictionary where the key is a tuple of
