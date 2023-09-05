@@ -1,7 +1,10 @@
 from pathlib import Path
 from typing import Union, Dict
+import json
 
 from json_vizard.Enums import ReturnType, FileType
+
+import bson
 
 
 def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, str]:
@@ -18,47 +21,85 @@ def read(path: Path, return_type: ReturnType = ReturnType.DICT) -> Union[dict, s
     :rtype: Union[dict, str]
     :raises TypeError: If to_datatype is not a ReturnType.
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid JSON or BSON file.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
+    :raises bson.errors.BSONDecodeError: If the file is not a valid BSON file.
     """
-    pass
+    if not isinstance(return_type, ReturnType):
+        raise TypeError(f'return_type must be a ReturnType, not {type(return_type)}.')
+
+    file_extension = path.suffix
+    if file_extension == '.json':
+        return _read_json(path, return_type)
+    elif file_extension == '.bson':
+        return _read_bson(path, return_type)
+    elif file_extension == '.txt':
+        return _read_txt(path, return_type)
+    else:
+        raise ValueError(f'File extension {file_extension} is not supported.')
 
 
-def _read_json(path: Path) -> dict:
+def _read_json(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a JSON file.
 
     :param path: Path to the JSON file.
     :type path: Path
     :return: The JSON file as a dictionary.
-    :rtype: dict
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid JSON file.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
     """
-    pass
+    with open(path, 'r') as json_file:
+        dictionary = json.load(json_file)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
-def _read_bson(path: Path) -> dict:
+def _read_bson(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a BSON file.
 
     :param path: Path to the BSON file.
     :type path: Path
     :return: The BSON file as a dictionary.
-    :rtype: dict
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
-    :raises ValueError: If the file is not a valid BSON file.
+    :raises bson.errors.BSONDecodeError: If the file is not a valid BSON file.
     """
-    pass
+    with open(path, 'rb') as bson_file:
+        bson_data = bson_file.read()
+
+    dictionary = bson.loads(bson_data)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
-def _read_txt(path: Path) -> str:
+def _read_txt(path: Path, return_type: ReturnType = ReturnType.DICT)\
+        -> Union[dict, str]:
     """Reads a dictionary from a TXT file.
 
     :param path: Path to the TXT file.
     :type path: Path
     :return: The TXT file as a dictionary.
-    :rtype: str
+    :rtype: Union[dict, str]
     :raises FileNotFoundError: If the file does not exist.
+    :raises JSONDecodeError: If the file is not a valid JSON file.
     """
-    pass
+    with open(path, "r") as file:
+        json_data = file.read()
+
+    dictionary = json.loads(json_data)
+
+    if return_type == ReturnType.DICT:
+        return dictionary
+    elif return_type == ReturnType.STRING:
+        return json.dumps(dictionary)
 
 
 def write(dictionary: Dict, path: Path, file_type=FileType.JSON) -> bool:

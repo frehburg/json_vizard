@@ -43,7 +43,7 @@ classifiers = [
 #
 # For an analysis of this field vs pip's requirements files see:
 # https://packaging.python.org/discussions/install-requires-vs-requirements/
-dependencies = [ # Optional
+dependencies = [
   "bson"
 ]
 
@@ -57,7 +57,7 @@ dependencies = [ # Optional
 # projects.
 [project.optional-dependencies] # Optional
 dev = ["check-manifest"]
-test = ["pytest", "coverage", "sort", "ruff"]
+test = ["pytest", "coverage", "isort", "ruff"]
 
 [project.urls]  # Optional
 "GitHub" = "https://github.com/frehburg/"
