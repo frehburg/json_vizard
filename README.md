@@ -1,4 +1,6 @@
-# JSON Vizard
+# JSON Vizard 
+
+<img src="https://github.com/frehburg/json_vizard/assets/43171336/51ae87b0-9c40-41c0-a92f-713a43d67c30" width="100" height="100">
 
 Brief description of your project.
 
